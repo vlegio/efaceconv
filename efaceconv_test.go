@@ -4,7 +4,10 @@ import (
 	"testing"
 )
 
-var str = "string"
+var (
+	str = "string"
+	sb  = []byte("slice of byte")
+)
 
 func TestEface2String(t *testing.T) {
 	res, ok := Eface2String(str)
@@ -27,6 +30,7 @@ func BenchmarkEface2String(b *testing.B) {
 		v, ok = Eface2String(str)
 	}
 	b.Log(*v, ok)
+
 }
 
 func classic(arg interface{}) (v string, ok bool) {
@@ -39,6 +43,29 @@ func BenchmarkClassic(b *testing.B) {
 	var ok bool
 	for n := 0; n < b.N; n++ {
 		v, ok = classic(str)
+	}
+	b.Log(v, ok)
+}
+
+func BenchmarkEface2ByteSlice(b *testing.B) {
+	var v *[]byte
+	var ok bool
+	for n := 0; n < b.N; n++ {
+		v, ok = Eface2ByteSlice(sb)
+	}
+	b.Log(*v, ok)
+}
+
+func sbClassic(arg interface{}) (v []byte, ok bool) {
+	v, ok = arg.([]byte)
+	return v, ok
+}
+
+func BenchmarkSBClassic(b *testing.B) {
+	var v []byte
+	var ok bool
+	for n := 0; n < b.N; n++ {
+		v, ok = sbClassic(sb)
 	}
 	b.Log(v, ok)
 }
