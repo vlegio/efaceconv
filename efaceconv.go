@@ -12,10 +12,11 @@ import (
 func main() {
 	imports := make(map[string]bool)
 	types := make(map[string]string)
-	cur_dir, err := os.Open("./")
+	cur_dir, err := os.Open(".")
 	if err != nil {
 		panic(err)
 	}
+	defer cur_dir.Close()
 	_, err = os.Stat("efaceconv_generated.go")
 	if err == nil || err == os.ErrExist {
 		os.Remove("efaceconv_generated.go")
@@ -28,6 +29,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	defer gen.Close()
 	rx, err := regexp.Compile(`\/\/ec\:[a-zA-Z\.\/0-9]*\:[a-zA-Z0-9\[\]]*\:[a-zA-Z0-9]*`)
 	//    `\/\/ec\:[a-zA-Z\.\/0-9]*\:[a-zA-Z0-9\[\]]*\:[a-zA-Z0-9]*`)
 	if err != nil {
