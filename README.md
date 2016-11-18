@@ -1,4 +1,5 @@
 # efaceconv
+```
 BenchmarkEface2String-4         100000000               10.2 ns/op             0 B/op          0 allocs/op
 --- BENCH: BenchmarkEface2String-4
         efaceconv_test.go:29: string true
