@@ -2,6 +2,22 @@
 
 # efaceconv
 High performance conversion from interface{} to string without additional allocations
+
+This is tool for go generate and common lib (ecutils)
+
+Usage:
+
+```go
+\\go:generate efaceconv
+\\ec::string:String
+\\ec:net\http:http.Writer:HttpWritter
+```
+
+\\ec:<import package name>:<type>:<custom name>
+
+View source
+
+
 ```
 BenchmarkEface2String-4         100000000               10.2 ns/op             0 B/op          0 allocs/op
 --- BENCH: BenchmarkEface2String-4

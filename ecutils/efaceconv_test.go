@@ -1,4 +1,4 @@
-package efaceconv
+package ecutils
 
 import (
 	"testing"
