@@ -16,11 +16,13 @@ func init() {
 }
 
 // GetKind returns arg's kind
+// panics if arg is a pointer to value
 func GetKind(arg interface{}) uintptr {
 	return *(*uintptr)(unsafe.Pointer((*(*[2]uintptr)(unsafe.Pointer(&arg)))[0]))
 }
 
 // GetDataPtr returns pointer to arg's data
+// panics if arg is a pointer to value
 func GetDataPtr(arg interface{}) unsafe.Pointer {
 	return unsafe.Pointer((*(*[2]uintptr)(unsafe.Pointer(&arg)))[1])
 }
