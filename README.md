@@ -1,3 +1,5 @@
+![TravisCI](https://travis-ci.org/t0pep0/efaceconv.svg?branch=master)
+
 # efaceconv
 High performance conversion from interface{} to string without additional allocations
 ```
