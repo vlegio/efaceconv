@@ -13,7 +13,12 @@ Usage:
 \\ec:net\http:http.Writer:HttpWritter
 ```
 
-\\ec:<import package name>:<type>:<custom name>
+\\\\ec:\<import package name\>:\<type\>:\<custom name\>
+
+generated function:
+```go
+func Eface2CustomName(arg interface{}) (*type, bool)
+```
 
 View  ./example dir
 
