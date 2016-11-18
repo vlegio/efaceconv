@@ -23,6 +23,25 @@ func TestEface2String(t *testing.T) {
 	}
 }
 
+func TestEface2ByteSlice(t *testing.T) {
+	res, ok := Eface2ByteSlice(sb)
+	if !ok {
+		t.Error("Wrong type!")
+	}
+	if len(*res) != len(sb) {
+		t.Error("Not equal")
+	}
+	for i := range *res {
+		if (*res)[i] != sb[i] {
+			t.Error("Not equal")
+		}
+	}
+	_, ok = Eface2ByteSlice(ok)
+	if ok {
+		t.Error("Wrong type!")
+	}
+}
+
 func BenchmarkEface2String(b *testing.B) {
 	var v *string
 	var ok bool
