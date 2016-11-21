@@ -25,34 +25,54 @@ func Eface2CustomName(arg interface{}) (*type, bool)
 View  ./example dir
 
 ```
-BenchmarkEface2String-4         100000000               10.8 ns/op             0 B/op          0 allocs/op
+=== RUN   TestEface2SByte
+--- PASS: TestEface2SByte (0.00s)
+=== RUN   TestEface2String
+--- PASS: TestEface2String (0.00s)
+=== RUN   TestEface2SInt
+--- PASS: TestEface2SInt (0.00s)
+BenchmarkEface2SByte-4          100000000               11.8 ns/op             0 B/op          0 allocs/op
+--- BENCH: BenchmarkEface2SByte-4
+        efaceconv_generated_test.go:33: &[] true
+        efaceconv_generated_test.go:33: &[] true
+        efaceconv_generated_test.go:33: &[] true
+        efaceconv_generated_test.go:33: &[] true
+        efaceconv_generated_test.go:33: &[] true
+BenchmarkSByteClassic-4         30000000                50.4 ns/op            32 B/op          1 allocs/op
+--- BENCH: BenchmarkSByteClassic-4
+        efaceconv_generated_test.go:48: [] true
+        efaceconv_generated_test.go:48: [] true
+        efaceconv_generated_test.go:48: [] true
+        efaceconv_generated_test.go:48: [] true
+        efaceconv_generated_test.go:48: [] true
+BenchmarkEface2String-4         100000000               11.1 ns/op             0 B/op          0 allocs/op
 --- BENCH: BenchmarkEface2String-4
-        efaceconv_test.go:51: string true
-        efaceconv_test.go:51: string true
-        efaceconv_test.go:51: string true
-        efaceconv_test.go:51: string true
-        efaceconv_test.go:51: string true
-BenchmarkClassic-4              30000000                46.4 ns/op            16 B/op          1 allocs/op
---- BENCH: BenchmarkClassic-4
-        efaceconv_test.go:66: string true
-        efaceconv_test.go:66: string true
-        efaceconv_test.go:66: string true
-        efaceconv_test.go:66: string true
-        efaceconv_test.go:66: string true
-BenchmarkEface2ByteSlice-4      100000000               11.2 ns/op             0 B/op          0 allocs/op
---- BENCH: BenchmarkEface2ByteSlice-4
-        efaceconv_test.go:75: [115 108 105 99 101 32 111 102 32 98 121 116 101] true
-        efaceconv_test.go:75: [115 108 105 99 101 32 111 102 32 98 121 116 101] true
-        efaceconv_test.go:75: [115 108 105 99 101 32 111 102 32 98 121 116 101] true
-        efaceconv_test.go:75: [115 108 105 99 101 32 111 102 32 98 121 116 101] true
-        efaceconv_test.go:75: [115 108 105 99 101 32 111 102 32 98 121 116 101] true
-BenchmarkSBClassic-4            30000000                56.9 ns/op            32 B/op          1 allocs/op
---- BENCH: BenchmarkSBClassic-4
-        efaceconv_test.go:89: [115 108 105 99 101 32 111 102 32 98 121 116 101] true
-        efaceconv_test.go:89: [115 108 105 99 101 32 111 102 32 98 121 116 101] true
-        efaceconv_test.go:89: [115 108 105 99 101 32 111 102 32 98 121 116 101] true
-        efaceconv_test.go:89: [115 108 105 99 101 32 111 102 32 98 121 116 101] true
-        efaceconv_test.go:89: [115 108 105 99 101 32 111 102 32 98 121 116 101] true
+        efaceconv_generated_test.go:76: 0xc42003fee8 true
+        efaceconv_generated_test.go:76: 0xc420043ea8 true
+        efaceconv_generated_test.go:76: 0xc420043ea8 true
+        efaceconv_generated_test.go:76: 0xc420043ea8 true
+        efaceconv_generated_test.go:76: 0xc420043ea8 true
+BenchmarkStringClassic-4        30000000                45.3 ns/op            16 B/op          1 allocs/op
+--- BENCH: BenchmarkStringClassic-4
+        efaceconv_generated_test.go:91:  true
+        efaceconv_generated_test.go:91:  true
+        efaceconv_generated_test.go:91:  true
+        efaceconv_generated_test.go:91:  true
+        efaceconv_generated_test.go:91:  true
+BenchmarkEface2SInt-4           100000000               11.6 ns/op             0 B/op          0 allocs/op
+--- BENCH: BenchmarkEface2SInt-4
+        efaceconv_generated_test.go:119: &[] true
+        efaceconv_generated_test.go:119: &[] true
+        efaceconv_generated_test.go:119: &[] true
+        efaceconv_generated_test.go:119: &[] true
+        efaceconv_generated_test.go:119: &[] true
+BenchmarkSIntClassic-4          30000000                50.5 ns/op            32 B/op          1 allocs/op
+--- BENCH: BenchmarkSIntClassic-4
+        efaceconv_generated_test.go:134: [] true
+        efaceconv_generated_test.go:134: [] true
+        efaceconv_generated_test.go:134: [] true
+        efaceconv_generated_test.go:134: [] true
+        efaceconv_generated_test.go:134: [] true
 PASS
-ok      github.com/t0pep0/efaceconv     5.437s
+ok      github.com/t0pep0/efaceconv/example     8.050s
 ```
