@@ -1,6 +1,6 @@
-![TravisCI](https://travis-ci.org/t0pep0/efaceconv.svg?branch=master)
-![GoReportCard](https://goreportcard.com/badge/github.com/t0pep0/efaceconv)
-![GoDoc](https://godoc.org/github.com/t0pep0/efaceconv/ecutils?status.svg)
+[![TravisCI](https://travis-ci.org/t0pep0/efaceconv.svg?branch=master)](https://travis-ci.org/github.com/t0pep0/efaceconv)
+[![GoReportCard](https://goreportcard.com/badge/github.com/t0pep0/efaceconv)](https://goreportcard.com/github.com/t0pep0/efaceconv)
+[![GoDoc](https://godoc.org/github.com/t0pep0/efaceconv/ecutils?status.svg)](https://godoc.org/github.com/t0pep0/efaceconv)
 [![Coverage Status](https://coveralls.io/repos/github/t0pep0/efaceconv/badge.svg?branch=master)](https://coveralls.io/github/t0pep0/efaceconv?branch=master)
 # efaceconv
 High performance conversion from interface{} to string without additional allocations
