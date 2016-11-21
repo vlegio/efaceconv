@@ -41,7 +41,7 @@ func Eface2%[1]v(arg interface{}) (*%[2]v, bool) {
 
 const testTemplate = `
 func TestEface2%v(t *testing.T) {
-  var %[1]v  %v
+  var %[1]v %v
 	res, ok := Eface2%[1]v(%[1]v)
 	if !ok {
 		t.Error("Wrong type!")
@@ -58,7 +58,7 @@ func TestEface2%v(t *testing.T) {
 `
 
 const benchmark = `
-func benchmarkEface2%v(b *testing.B) {
+func BenchmarkEface2%v(b *testing.B) {
   var %[1]v %[2]v
 	var v *%[2]v
 	var ok bool
@@ -73,7 +73,7 @@ func _%[1]vClassic(arg interface{}) (v %[2]v, ok bool) {
 	return v, ok
 }
 
-func benchmark%[1]vClassic(b *testing.B) {
+func Benchmark%[1]vClassic(b *testing.B) {
   var %[1]v %[2]v
   var v %[2]v
 	var ok bool
