@@ -29,6 +29,7 @@ func GetDataPtr(arg interface{}) unsafe.Pointer {
 
 // Eface2String returns pointer to string and true if arg is a string
 // or nil and false otherwise
+//
 // DEPRECATED: use go generate
 func Eface2String(arg interface{}) (*string, bool) {
 	if GetKind(arg) == strKind {
@@ -39,6 +40,7 @@ func Eface2String(arg interface{}) (*string, bool) {
 
 // Eface2ByteSlice returns pointer to []byte and true if arg is a []byte
 // or nil and false otherwise
+//
 // DEPRECATED: use go generate
 func Eface2ByteSlice(arg interface{}) (*[]byte, bool) {
 	if GetKind(arg) == sbKind {

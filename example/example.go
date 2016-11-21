@@ -3,7 +3,4 @@
 //ec::string:String
 //ec::[]int:SInt
 
-package main
-
-func main() {
-}
+package example

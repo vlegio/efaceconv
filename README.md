@@ -3,7 +3,7 @@
 [![GoDoc](https://godoc.org/github.com/t0pep0/efaceconv/ecutils?status.svg)](https://godoc.org/github.com/t0pep0/efaceconv/ecutils)
 [![Coverage Status](https://coveralls.io/repos/github/t0pep0/efaceconv/badge.svg?branch=master)](https://coveralls.io/github/t0pep0/efaceconv?branch=master)
 # efaceconv
-High performance conversion from interface{} to string without additional allocations
+High performance conversion from interface{} to immutable types without additional allocations
 
 This is tool for go generate and common lib (ecutils)
 
@@ -12,7 +12,7 @@ Usage:
 ```go
 \\go:generate efaceconv
 \\ec::string:String
-\\ec:net\http:http.Writer:HttpWritter
+\\ec:net/http:http.Writer:ResponseWritter
 ```
 
 \\\\ec:\<import package name\>:\<type\>:\<custom name\>
