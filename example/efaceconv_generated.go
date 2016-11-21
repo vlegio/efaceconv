@@ -2,31 +2,30 @@
 package main
 
 import (
-	"github.com/t0pep0/efaceconv/ecutils"
+  "github.com/t0pep0/efaceconv/ecutils"
 )
 
 var (
-	_SByteKind  uintptr
-	_StringKind uintptr
-	_SIntKind   uintptr
+  _SByteKind uintptr
+  _StringKind uintptr
+  _SIntKind uintptr
 )
 
-func init() {
-	var sString string
-	_StringKind = ecutils.GetKind(sString)
-	var sSInt []int
-	_SIntKind = ecutils.GetKind(sSInt)
-	var sSByte []byte
-	_SByteKind = ecutils.GetKind(sSByte)
+func init(){
+  var sSByte []byte
+  _SByteKind = ecutils.GetKind(sSByte)
+
+  var sString string
+  _StringKind = ecutils.GetKind(sString)
+
+  var sSInt []int
+  _SIntKind = ecutils.GetKind(sSInt)
+
 }
 
-func Eface2SInt(arg interface{}) (*[]int, bool) {
-	if ecutils.GetKind(arg) == _SIntKind {
-		return (*[]int)(ecutils.GetDataPtr(arg)), true
-	}
-	return nil, false
-}
 
+// Eface2SByte returns pointer to []byte and true if arg is a string
+// or nil and false otherwise
 func Eface2SByte(arg interface{}) (*[]byte, bool) {
 	if ecutils.GetKind(arg) == _SByteKind {
 		return (*[]byte)(ecutils.GetDataPtr(arg)), true
@@ -34,9 +33,23 @@ func Eface2SByte(arg interface{}) (*[]byte, bool) {
 	return nil, false
 }
 
+
+// Eface2String returns pointer to string and true if arg is a string
+// or nil and false otherwise
 func Eface2String(arg interface{}) (*string, bool) {
 	if ecutils.GetKind(arg) == _StringKind {
 		return (*string)(ecutils.GetDataPtr(arg)), true
 	}
 	return nil, false
 }
+
+
+// Eface2SInt returns pointer to []int and true if arg is a string
+// or nil and false otherwise
+func Eface2SInt(arg interface{}) (*[]int, bool) {
+	if ecutils.GetKind(arg) == _SIntKind {
+		return (*[]int)(ecutils.GetDataPtr(arg)), true
+	}
+	return nil, false
+}
+
