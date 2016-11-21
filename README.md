@@ -12,7 +12,7 @@ Usage:
 ```go
 \\go:generate efaceconv
 \\ec::string:String
-\\ec:net/http:http.Writer:ResponseWritter
+\\ec:net/http:http.ResponseWriter:ResponseWritter
 ```
 
 \\\\ec:\<import package name\>:\<type\>:\<custom name\>
