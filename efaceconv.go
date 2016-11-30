@@ -5,6 +5,7 @@ import (
 	"go/parser"
 	"go/token"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"regexp"
 )
@@ -227,7 +228,11 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	defer gen.Close()
+	defer func() {
+		gen.Close()
+		exec.Command("goimports", "-w", generateFileName).Run()
+		exec.Command("gofmt", "-w", "-s", generateFileName).Run()
+	}()
 	genTest, err := os.Create(generateTestFileName)
 	if err != nil {
 		panic(err)

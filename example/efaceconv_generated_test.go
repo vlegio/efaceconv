@@ -8,7 +8,7 @@ import (
 
 
 func TestEface2SByte(t *testing.T) {
-  var SByte  []byte
+  var SByte []byte
 	res, ok := Eface2SByte(SByte)
 	if !ok {
 		t.Error("Wrong type!")
@@ -51,7 +51,7 @@ func BenchmarkSByteClassic(b *testing.B) {
 
 
 func TestEface2String(t *testing.T) {
-  var String  string
+  var String string
 	res, ok := Eface2String(String)
 	if !ok {
 		t.Error("Wrong type!")
@@ -94,7 +94,7 @@ func BenchmarkStringClassic(b *testing.B) {
 
 
 func TestEface2SInt(t *testing.T) {
-  var SInt  []int
+  var SInt []int
 	res, ok := Eface2SInt(SInt)
 	if !ok {
 		t.Error("Wrong type!")
