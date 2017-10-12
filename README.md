@@ -10,12 +10,12 @@ This is tool for go generate and common lib (ecutils)
 Usage:
 
 ```go
-\\go:generate efaceconv
-\\ec::string:String
-\\ec:net/http:http.ResponseWriter:ResponseWritter
+//go:generate efaceconv
+//ec::string:String
+//ec:net/http:http.ResponseWriter:ResponseWritter
 ```
 
-\\\\ec:\<import package name\>:\<type\>:\<custom name\>
+//ec:\<import package name\>:\<type\>:\<custom name\>
 
 generated function:
 ```go
